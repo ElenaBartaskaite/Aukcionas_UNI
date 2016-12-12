@@ -14,7 +14,8 @@ namespace Aukcionas
         [STAThread]
         static void Main()
         {
-            Application.EnableVisualStyles();
+            using (var DB=new AukcionasEntities())
+                Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());
         }
