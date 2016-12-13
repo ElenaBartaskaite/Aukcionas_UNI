@@ -59,5 +59,22 @@ namespace Aukcionas
             string from = textBox3.Text;
             dataGridView2.DataSource = Select(what, from, connString);
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            string connString = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=C:\USERS\ELENA\DESKTOP\EB\AUKCIONAS\AUKCIONAS\BIN\DEBUG\AUKCIONAS.MDF;Integrated Security=True;Connect Timeout=15;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
+            string to = textBox4.Text;
+            string valueTypes = textBox5.Text;
+            string values = textBox6.Text;
+            SqlConnection conn = new SqlConnection(connString);
+            SqlCommand cmd = new SqlCommand("INSERT INTO " + to + "(" + valueTypes + ")VALUES(" + values + ");");
+            conn.Open();
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            conn.Close();
+            da.Dispose();
+            dataGridView3.DataSource = Select("*", to, connString);
+        }
     }
 }
