@@ -36,5 +36,28 @@ namespace Aukcionas
             conn.Close();
             da.Dispose();
         }
+        static DataTable Select(string what, string from, string db)
+        {
+            SqlConnection conn = new SqlConnection(db);
+            SqlCommand cmd = new SqlCommand("Select " + what + " from " + from + ";", conn);
+            conn.Open();
+
+            // create data adapter
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            // this will query your database and return the result to your datatable
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            conn.Close();
+            da.Dispose();
+            return dt;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            string connString = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=C:\USERS\ELENA\DESKTOP\EB\AUKCIONAS\AUKCIONAS\BIN\DEBUG\AUKCIONAS.MDF;Integrated Security=True;Connect Timeout=15;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
+            string what = textBox2.Text;
+            string from = textBox3.Text;
+            dataGridView2.DataSource = Select(what, from, connString);
+        }
     }
 }
