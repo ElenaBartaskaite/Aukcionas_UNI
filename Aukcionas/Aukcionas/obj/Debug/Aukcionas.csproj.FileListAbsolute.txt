@@ -14,3 +14,4 @@ C:\Users\Elena\Desktop\EB\Aukcionas\Aukcionas\obj\Debug\Aukcionas.csprojResolveA
 C:\Users\Elena\Desktop\EB\Aukcionas\Aukcionas\obj\Debug\Aukcionas.Properties.Resources.resources
 C:\Users\Elena\Desktop\EB\Aukcionas\Aukcionas\obj\Debug\Aukcionas.csproj.GenerateResource.Cache
 C:\Users\Elena\Desktop\EB\Aukcionas\Aukcionas\bin\Debug\App.config
+C:\Users\Elena\Desktop\EB\Aukcionas\Aukcionas\obj\Debug\Aukcionas.Form1.resources
