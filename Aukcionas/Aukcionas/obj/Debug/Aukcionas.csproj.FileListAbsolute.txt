@@ -1,1 +1,16 @@
 C:\Users\Elena\Desktop\EB\Aukcionas\Aukcionas\bin\Debug\Aukcionas.exe.config
+C:\Users\Elena\Desktop\EB\Aukcionas\Aukcionas\obj\Debug\Aukcionas.exe
+C:\Users\Elena\Desktop\EB\Aukcionas\Aukcionas\obj\Debug\Aukcionas.pdb
+C:\Users\Elena\Desktop\EB\Aukcionas\Aukcionas\bin\Debug\Aukcionas.ldf
+C:\Users\Elena\Desktop\EB\Aukcionas\Aukcionas\bin\Debug\Aukcionas.mdf
+C:\Users\Elena\Desktop\EB\Aukcionas\Aukcionas\bin\Debug\Aukcionas.exe
+C:\Users\Elena\Desktop\EB\Aukcionas\Aukcionas\bin\Debug\Aukcionas.pdb
+C:\Users\Elena\Desktop\EB\Aukcionas\Aukcionas\bin\Debug\EntityFramework.dll
+C:\Users\Elena\Desktop\EB\Aukcionas\Aukcionas\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Elena\Desktop\EB\Aukcionas\Aukcionas\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Users\Elena\Desktop\EB\Aukcionas\Aukcionas\bin\Debug\EntityFramework.xml
+C:\Users\Elena\Desktop\EB\Aukcionas\Aukcionas\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Elena\Desktop\EB\Aukcionas\Aukcionas\obj\Debug\Aukcionas.csprojResolveAssemblyReference.cache
+C:\Users\Elena\Desktop\EB\Aukcionas\Aukcionas\obj\Debug\Aukcionas.Properties.Resources.resources
+C:\Users\Elena\Desktop\EB\Aukcionas\Aukcionas\obj\Debug\Aukcionas.csproj.GenerateResource.Cache
+C:\Users\Elena\Desktop\EB\Aukcionas\Aukcionas\bin\Debug\App.config

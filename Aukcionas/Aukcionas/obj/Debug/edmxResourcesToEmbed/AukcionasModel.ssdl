@@ -1,0 +1,140 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="AukcionasModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Aukcionas">
+    <Key>
+      <PropertyRef Name="AukcionoPavadinimas" />
+    </Key>
+    <Property Name="AukcionoPavadinimas" Type="nchar" MaxLength="30" Nullable="false" />
+    <Property Name="Vieta" Type="nchar" MaxLength="20" Nullable="false" />
+    <Property Name="Data" Type="date" Nullable="false" />
+    <Property Name="Pradzia" Type="time" Precision="7" Nullable="false" />
+    <Property Name="Pabaiga" Type="time" Precision="7" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Dailininkas">
+    <Key>
+      <PropertyRef Name="Vardas" />
+      <PropertyRef Name="Pavarde" />
+    </Key>
+    <Property Name="Vardas" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="Pavarde" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="GimimoMetai" Type="date" Nullable="false" />
+    <Property Name="MirtiesMetai" Type="date" />
+  </EntityType>
+  <EntityType Name="Dalyvauja">
+    <Key>
+      <PropertyRef Name="DalyvioID" />
+      <PropertyRef Name="AukcionoPavadinimas" />
+    </Key>
+    <Property Name="DalyvioID" Type="int" Nullable="false" />
+    <Property Name="AukcionoPavadinimas" Type="nchar" MaxLength="30" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Kolekcionierius">
+    <Key>
+      <PropertyRef Name="DalyvioID" />
+    </Key>
+    <Property Name="DalyvioID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Vardas" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="Pavarde" Type="nchar" MaxLength="10" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Paveikslas">
+    <Key>
+      <PropertyRef Name="PaveiksloID" />
+    </Key>
+    <Property Name="PaveiksloID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SavininkoID" Type="int" />
+    <Property Name="Metai" Type="date" Nullable="false" />
+    <Property Name="Kaina" Type="int" Nullable="false" />
+    <Property Name="DailininkoVardas" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="DailininkoPavarde" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="AukcionoPavadinimas" Type="nchar" MaxLength="30" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_Dalyvauja_ToAukcionas">
+    <End Role="Aukcionas" Type="Self.Aukcionas" Multiplicity="1" />
+    <End Role="Dalyvauja" Type="Self.Dalyvauja" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Aukcionas">
+        <PropertyRef Name="AukcionoPavadinimas" />
+      </Principal>
+      <Dependent Role="Dalyvauja">
+        <PropertyRef Name="AukcionoPavadinimas" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Dalyvauja_ToKolekcionierius">
+    <End Role="Kolekcionierius" Type="Self.Kolekcionierius" Multiplicity="1" />
+    <End Role="Dalyvauja" Type="Self.Dalyvauja" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Kolekcionierius">
+        <PropertyRef Name="DalyvioID" />
+      </Principal>
+      <Dependent Role="Dalyvauja">
+        <PropertyRef Name="DalyvioID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Paveikslas_ToAukcionas">
+    <End Role="Aukcionas" Type="Self.Aukcionas" Multiplicity="1" />
+    <End Role="Paveikslas" Type="Self.Paveikslas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Aukcionas">
+        <PropertyRef Name="AukcionoPavadinimas" />
+      </Principal>
+      <Dependent Role="Paveikslas">
+        <PropertyRef Name="AukcionoPavadinimas" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Paveikslas_ToDailininkas">
+    <End Role="Dailininkas" Type="Self.Dailininkas" Multiplicity="1" />
+    <End Role="Paveikslas" Type="Self.Paveikslas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Dailininkas">
+        <PropertyRef Name="Vardas" />
+        <PropertyRef Name="Pavarde" />
+      </Principal>
+      <Dependent Role="Paveikslas">
+        <PropertyRef Name="DailininkoVardas" />
+        <PropertyRef Name="DailininkoPavarde" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Paveikslas_ToKolekcionierius">
+    <End Role="Kolekcionierius" Type="Self.Kolekcionierius" Multiplicity="0..1" />
+    <End Role="Paveikslas" Type="Self.Paveikslas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Kolekcionierius">
+        <PropertyRef Name="DalyvioID" />
+      </Principal>
+      <Dependent Role="Paveikslas">
+        <PropertyRef Name="SavininkoID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="AukcionasModelStoreContainer">
+    <EntitySet Name="Aukcionas" EntityType="Self.Aukcionas" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Dailininkas" EntityType="Self.Dailininkas" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Dalyvauja" EntityType="Self.Dalyvauja" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Kolekcionierius" EntityType="Self.Kolekcionierius" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Paveikslas" EntityType="Self.Paveikslas" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Dalyvauja_ToAukcionas" Association="Self.FK_Dalyvauja_ToAukcionas">
+      <End Role="Aukcionas" EntitySet="Aukcionas" />
+      <End Role="Dalyvauja" EntitySet="Dalyvauja" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Dalyvauja_ToKolekcionierius" Association="Self.FK_Dalyvauja_ToKolekcionierius">
+      <End Role="Kolekcionierius" EntitySet="Kolekcionierius" />
+      <End Role="Dalyvauja" EntitySet="Dalyvauja" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Paveikslas_ToAukcionas" Association="Self.FK_Paveikslas_ToAukcionas">
+      <End Role="Aukcionas" EntitySet="Aukcionas" />
+      <End Role="Paveikslas" EntitySet="Paveikslas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Paveikslas_ToDailininkas" Association="Self.FK_Paveikslas_ToDailininkas">
+      <End Role="Dailininkas" EntitySet="Dailininkas" />
+      <End Role="Paveikslas" EntitySet="Paveikslas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Paveikslas_ToKolekcionierius" Association="Self.FK_Paveikslas_ToKolekcionierius">
+      <End Role="Kolekcionierius" EntitySet="Kolekcionierius" />
+      <End Role="Paveikslas" EntitySet="Paveikslas" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

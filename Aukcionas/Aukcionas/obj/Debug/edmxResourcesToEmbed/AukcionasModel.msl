@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="AukcionasModelStoreContainer" CdmEntityContainer="AukcionasEntities">
+    <EntitySetMapping Name="Aukcionas">
+      <EntityTypeMapping TypeName="AukcionasModel.Aukcionas">
+        <MappingFragment StoreEntitySet="Aukcionas">
+          <ScalarProperty Name="AukcionoPavadinimas" ColumnName="AukcionoPavadinimas" />
+          <ScalarProperty Name="Vieta" ColumnName="Vieta" />
+          <ScalarProperty Name="Data" ColumnName="Data" />
+          <ScalarProperty Name="Pradzia" ColumnName="Pradzia" />
+          <ScalarProperty Name="Pabaiga" ColumnName="Pabaiga" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Dailininkas">
+      <EntityTypeMapping TypeName="AukcionasModel.Dailininkas">
+        <MappingFragment StoreEntitySet="Dailininkas">
+          <ScalarProperty Name="Vardas" ColumnName="Vardas" />
+          <ScalarProperty Name="Pavarde" ColumnName="Pavarde" />
+          <ScalarProperty Name="GimimoMetai" ColumnName="GimimoMetai" />
+          <ScalarProperty Name="MirtiesMetai" ColumnName="MirtiesMetai" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Kolekcionierius">
+      <EntityTypeMapping TypeName="AukcionasModel.Kolekcionierius">
+        <MappingFragment StoreEntitySet="Kolekcionierius">
+          <ScalarProperty Name="DalyvioID" ColumnName="DalyvioID" />
+          <ScalarProperty Name="Vardas" ColumnName="Vardas" />
+          <ScalarProperty Name="Pavarde" ColumnName="Pavarde" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Paveikslas">
+      <EntityTypeMapping TypeName="AukcionasModel.Paveikslas">
+        <MappingFragment StoreEntitySet="Paveikslas">
+          <ScalarProperty Name="PaveiksloID" ColumnName="PaveiksloID" />
+          <ScalarProperty Name="SavininkoID" ColumnName="SavininkoID" />
+          <ScalarProperty Name="Metai" ColumnName="Metai" />
+          <ScalarProperty Name="Kaina" ColumnName="Kaina" />
+          <ScalarProperty Name="DailininkoVardas" ColumnName="DailininkoVardas" />
+          <ScalarProperty Name="DailininkoPavarde" ColumnName="DailininkoPavarde" />
+          <ScalarProperty Name="AukcionoPavadinimas" ColumnName="AukcionoPavadinimas" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="Dalyvauja" TypeName="AukcionasModel.Dalyvauja" StoreEntitySet="Dalyvauja">
+      <EndProperty Name="Aukcionas">
+        <ScalarProperty Name="AukcionoPavadinimas" ColumnName="AukcionoPavadinimas" />
+      </EndProperty>
+      <EndProperty Name="Kolekcionierius">
+        <ScalarProperty Name="DalyvioID" ColumnName="DalyvioID" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>
