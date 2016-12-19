@@ -78,7 +78,35 @@ namespace Aukcionas
             dataGridView3.DataSource = Select("*", to, connString);
         }*/
 
-        private void groupBox1_Enter(object sender, EventArgs e)
+
+        private void sendPanelToBack(GroupBox groupBox)
+        {
+            groupBox1.Invoke(new Action(() =>
+            {
+                groupBox.SendToBack();
+                foreach (Control control in groupBox.Controls)
+                {
+                    control.SendToBack();
+                }
+            }));
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            //paveikslaas ikelt
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            //dailininkas update
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            //kolekcionieriai
+        }
+
+        private void button5_Click(object sender, EventArgs e)
         {
             string pavadinimas = textBox2.Text;
             string slaptazodis = textBox3.Text;
@@ -95,18 +123,6 @@ namespace Aukcionas
                     }
                 }
             }
-        }
-
-        private void sendPanelToBack(GroupBox groupBox)
-        {
-            groupBox1.Invoke(new Action(() =>
-            {
-                groupBox.SendToBack();
-                foreach (Control control in groupBox.Controls)
-                {
-                    control.SendToBack();
-                }
-            }));
         }
     }
 }
