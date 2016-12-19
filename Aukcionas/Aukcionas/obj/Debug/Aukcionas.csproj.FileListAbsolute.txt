@@ -15,3 +15,13 @@ C:\Users\Elena\Desktop\EB\Aukcionas\Aukcionas\obj\Debug\Aukcionas.Properties.Res
 C:\Users\Elena\Desktop\EB\Aukcionas\Aukcionas\obj\Debug\Aukcionas.csproj.GenerateResource.Cache
 C:\Users\Elena\Desktop\EB\Aukcionas\Aukcionas\bin\Debug\App.config
 C:\Users\Elena\Desktop\EB\Aukcionas\Aukcionas\obj\Debug\Aukcionas.Form1.resources
+C:\Users\Elena\Desktop\EB\Aukcionas\Aukcionas\bin\Debug\AukcionasModel.Context.tt
+C:\Users\Elena\Desktop\EB\Aukcionas\Aukcionas\bin\Debug\AukcionasModel.tt
+C:\Users\Elena\Desktop\EB\Aukcionas\Aukcionas\bin\Debug\Aukcionas.cs
+C:\Users\Elena\Desktop\EB\Aukcionas\Aukcionas\bin\Debug\AukcionasModel.Context.cs
+C:\Users\Elena\Desktop\EB\Aukcionas\Aukcionas\bin\Debug\AukcionasModel.cs
+C:\Users\Elena\Desktop\EB\Aukcionas\Aukcionas\bin\Debug\AukcionasModel.Designer.cs
+C:\Users\Elena\Desktop\EB\Aukcionas\Aukcionas\bin\Debug\Dailininkas.cs
+C:\Users\Elena\Desktop\EB\Aukcionas\Aukcionas\bin\Debug\Kolekcionierius.cs
+C:\Users\Elena\Desktop\EB\Aukcionas\Aukcionas\bin\Debug\Paveikslas.cs
+C:\Users\Elena\Desktop\EB\Aukcionas\Aukcionas\bin\Debug\AukcionasModel.edmx.diagram

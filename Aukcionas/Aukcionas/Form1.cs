@@ -53,7 +53,7 @@ namespace Aukcionas
             return dt;
         }
 
-        /*private void button2_Click(object sender, EventArgs e)
+        /*private void Selectinimas cia(object sender, EventArgs e)
         {
             string connString = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=C:\USERS\ELENA\DESKTOP\EB\AUKCIONAS\AUKCIONAS\BIN\DEBUG\AUKCIONAS.MDF;Integrated Security=True;Connect Timeout=15;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
             string what = textBox2.Text;
@@ -79,18 +79,6 @@ namespace Aukcionas
         }*/
 
 
-        private void sendPanelToBack(GroupBox groupBox)
-        {
-            groupBox1.Invoke(new Action(() =>
-            {
-                groupBox.SendToBack();
-                foreach (Control control in groupBox.Controls)
-                {
-                    control.SendToBack();
-                }
-            }));
-        }
-
         private void button3_Click(object sender, EventArgs e)
         {
             //paveikslaas ikelt
@@ -106,23 +94,6 @@ namespace Aukcionas
             //kolekcionieriai
         }
 
-        private void button5_Click(object sender, EventArgs e)
-        {
-            string pavadinimas = textBox2.Text;
-            string slaptazodis = textBox3.Text;
-            using (AukcionasEntities database = new AukcionasEntities())
-            {
-                var aukcionai = database.Aukcionas.Select(p => p);
-                foreach (var aukcionac in aukcionai)
-                {
-                    if (aukcionac.AukcionoPavadinimas == pavadinimas && aukcionac.Slaptazodis == slaptazodis)
-                    {
-                        prisijungta = aukcionac;
-                        sendPanelToBack(groupBox1);
-                        break;
-                    }
-                }
-            }
         }
     }
 }
