@@ -4,6 +4,7 @@
     <EntitySetMapping Name="Aukcionas">
       <EntityTypeMapping TypeName="AukcionasModel.Aukcionas">
         <MappingFragment StoreEntitySet="Aukcionas">
+          <ScalarProperty Name="Slaptazodis" ColumnName="Slaptazodis" />
           <ScalarProperty Name="AukcionoPavadinimas" ColumnName="AukcionoPavadinimas" />
           <ScalarProperty Name="Vieta" ColumnName="Vieta" />
           <ScalarProperty Name="Data" ColumnName="Data" />

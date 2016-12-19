@@ -6,7 +6,7 @@
     <edmx:Diagrams>
       <Diagram DiagramId="30a0981fa42c48fea8cbc45e283d49c0" Name="Diagram1">
         <EntityTypeShape EntityType="AukcionasModel.Aukcionas" Width="1.5" PointX="0.75" PointY="3.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="AukcionasModel.Dailininkas" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="AukcionasModel.Dailininkas" Width="1.5" PointX="3" PointY="1.125" IsExpanded="true" />
         <EntityTypeShape EntityType="AukcionasModel.Kolekcionierius" Width="1.5" PointX="3" PointY="3.75" IsExpanded="true" />
         <EntityTypeShape EntityType="AukcionasModel.Paveikslas" Width="1.5" PointX="5.25" PointY="3.25" IsExpanded="true" />
         <AssociationConnector Association="AukcionasModel.FK_Paveikslas_ToAukcionas" ManuallyRouted="false" />

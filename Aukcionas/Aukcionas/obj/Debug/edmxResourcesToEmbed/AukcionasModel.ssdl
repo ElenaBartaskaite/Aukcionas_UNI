@@ -9,6 +9,7 @@
     <Property Name="Data" Type="date" Nullable="false" />
     <Property Name="Pradzia" Type="time" Precision="7" Nullable="false" />
     <Property Name="Pabaiga" Type="time" Precision="7" Nullable="false" />
+    <Property Name="Slaptazodis" Type="nchar" MaxLength="10" />
   </EntityType>
   <EntityType Name="Dailininkas">
     <Key>

@@ -13,6 +13,7 @@ namespace Aukcionas
 {
     public partial class Form1 : Form
     {
+        public Aukcionas prisijungta = null;
         public Form1()
         {
             InitializeComponent();
@@ -52,15 +53,15 @@ namespace Aukcionas
             return dt;
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        /*private void button2_Click(object sender, EventArgs e)
         {
             string connString = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=C:\USERS\ELENA\DESKTOP\EB\AUKCIONAS\AUKCIONAS\BIN\DEBUG\AUKCIONAS.MDF;Integrated Security=True;Connect Timeout=15;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
             string what = textBox2.Text;
             string from = textBox3.Text;
             dataGridView2.DataSource = Select(what, from, connString);
-        }
+        }*/
 
-        private void button3_Click(object sender, EventArgs e)
+        /*private void button3_Click(object sender, EventArgs e)
         {
             string connString = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=C:\USERS\ELENA\DESKTOP\EB\AUKCIONAS\AUKCIONAS\BIN\DEBUG\AUKCIONAS.MDF;Integrated Security=True;Connect Timeout=15;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
             string to = textBox4.Text;
@@ -75,6 +76,37 @@ namespace Aukcionas
             conn.Close();
             da.Dispose();
             dataGridView3.DataSource = Select("*", to, connString);
+        }*/
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+            string pavadinimas = textBox2.Text;
+            string slaptazodis = textBox3.Text;
+            using (AukcionasEntities database = new AukcionasEntities())
+            {
+                var aukcionai = database.Aukcionas.Select(p => p);
+                foreach (var aukcionac in aukcionai)
+                {
+                    if (aukcionac.AukcionoPavadinimas == pavadinimas && aukcionac.Slaptazodis == slaptazodis)
+                    {
+                        prisijungta = aukcionac;
+                        sendPanelToBack(groupBox1);
+                        break;
+                    }
+                }
+            }
+        }
+
+        private void sendPanelToBack(GroupBox groupBox)
+        {
+            groupBox1.Invoke(new Action(() =>
+            {
+                groupBox.SendToBack();
+                foreach (Control control in groupBox.Controls)
+                {
+                    control.SendToBack();
+                }
+            }));
         }
     }
 }

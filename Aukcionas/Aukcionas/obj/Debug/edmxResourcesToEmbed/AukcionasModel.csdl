@@ -11,6 +11,7 @@
     <Property Name="Pabaiga" Type="Time" Nullable="false" Precision="7" />
     <NavigationProperty Name="Paveikslas" Relationship="Self.FK_Paveikslas_ToAukcionas" FromRole="Aukcionas" ToRole="Paveikslas" />
     <NavigationProperty Name="Kolekcionierius" Relationship="Self.Dalyvauja" FromRole="Aukcionas" ToRole="Kolekcionierius" />
+    <Property Name="Slaptazodis" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
   </EntityType>
   <EntityType Name="Dailininkas">
     <Key>
